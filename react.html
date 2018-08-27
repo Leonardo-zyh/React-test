@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang=>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React-test</title>
+</head>
+<body>
+   <div id="root">
+
+   </div>
+
+
+<script src="https://cdn.bootcss.com/react/16.4.0/umd/react.production.min.js"></script>
+<script src="https://cdn.bootcss.com/react-dom/16.4.0/umd/react-dom.production.min.js"></script>
+<script>
+let  number = 0
+let onClickButton = ()=>{
+    number +=1
+    render()
+}
+let onClickButton2 = ()=>{
+    number -=1
+    render()
+}
+render()
+
+function render(){
+    //React.createElement('div),
+    /*babeljs.io 可以转换jsx
+    <div class='parent'>
+    <span class='red'>{number}</span>
+    <button onClick={onClickButton}>+</button>
+    <button onClick={onClickButton2}>-</button>
+    </div>                  */
+    let h = React.createElement
+    ReactDOM.render(
+    h('div',{className:'parent'},
+    h('span',{className:'red'},number),
+    h('button',{onClick:onClickButton},'+'),
+    h('button',{onClick:onClickButton2},'-')
+    ),
+    document.querySelector('#root'))
+}
+
+</script>
+</body>
+
+</html>

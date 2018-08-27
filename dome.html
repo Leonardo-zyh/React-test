@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang=>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React-test</title>
+</head>
+<body>
+   <span id="result">0</span>
+   <button id="add">+</button> 
+   <button id="minus">-</button>
+
+</body>
+<script>
+let result = document.querySelector('#result')
+let add = document.querySelector('#add')
+let minus = document.querySelector('#minus')
+
+add.addEventListener('click',function() {
+    let number = parseInt(result.innerText,10)
+    number +=1
+    result.innerText = number
+})
+
+minus.addEventListener('click',function(){
+    let number = parseInt(result.innerText,10)
+    number -=1
+    result.innerText = number
+})
+</script>
+</html>
