@@ -1,4 +1,4 @@
-
+import React from 'react'
 //只能设置函数里的对象和属性
 class Box1 extends React.Component {     //App继承React组件
     constructor(props) {    //构造函数（传入属性）
@@ -57,7 +57,29 @@ class Box2 extends React.Component {
         )
     }
 }
+class App extends React.Component {  //首字母必须大写
 
+    render() {
+        return (
+            <div>
+                <Box1 name='jake' />
+                <Box2 name='rose' />
+            </div>
+        )
+    }
+}
+
+
+render()
+
+function render() {
+    ReactDOM.render(
+        <App />, //React.createlement(App)
+        document.querySelector('#root')
+    )
+}
+
+/*
 function App(){  //首字母必须大写
     return(
         <div>
@@ -65,13 +87,4 @@ function App(){  //首字母必须大写
         <Box2 name='rose'/>
         </div>  
     )
-}
-
-render()
-function render() {
-    ReactDOM.render(
-        <App />, //React.createlement(App)
-        document.querySelector('#root')
-    )
-}
- 
+}*/
